@@ -1,1 +1,1 @@
-# umich-events-gpt-
+# umich-events-gpt
