@@ -90,8 +90,7 @@ if __name__ == '__main__':
     parser.add_argument('-v', '--verbose', type=bool, default=1, help='Prints more information')
     args = parser.parse_args()
 
-    # url = 'https://events.umich.edu/week/json?filter=types:21,5,13,19,18,&v=2'
-    events = get_events(url)
+    events = get_events(args.url)
     print(f'Got {len(events)} events from events.umich.edu\'s API.')
 
     # Read blacklist from blacklist.txt if it exists and filter
