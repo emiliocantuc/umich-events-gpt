@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommended Umich Events</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div id="header" style="text-align: center;padding-top: 32px;padding-left: 8px;padding-right: 8px;">
+        <h1>Recommended events</h1>
+        <p>
+            By ChatGPT for me to attend this week at the University of Michigan.
+            Updated <span id="updated">...</span> | <a href="">GitHub</a>
+        </p>
+    </div>
+
+    
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">MCDB Symposium: Four Presentations</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Jan 08 09:00 - 17:00. Workshop / Seminar. Rackham Graduate School (Horace H.)</h6>
+            <p class="card-text">Corey Allard, PhD
+*Molecular mechanisms of sensory innovation*
+9:00am - 10:10am
+
+Kavita Rangan, PhD
+*RNA recoding in protein diversification and phenotypic plasticity*
+10:30am - 11:40am
+
+Meredith Skiba, PhD
+*Structural insights into angiotensin receptor modulation by diverse ligands*
+1:30pm – 2:40pm
+
+Mustafa Aydogan, PhD
+*Hidden rhythms of the cell: autonomous clocks in cytoplasmic organization and division*
+3:00pm – 4:10pm</p>
+            <a href="http://events.umich.edu/event/116505" class="card-link">Event Link</a>
+        </div>
+    </div>
+    
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Welcome-back Faculty Social: Michigan Institute for Data Science</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Jan 08 13:00 - 15:00. Social / Informal Gathering. Michigan Union</h6>
+            <p class="card-text">With a new year and semester upon us, MIDAS invites all affiliated faculty to join us for a welcome-back social. Learn about upcoming research events, training, and other activities planned for 2024; network with other affiliate faculty and find new collaboration opportunities; and discuss how MIDAS can work with you on your research goals for the year.
+
+Hors d’oeuvres and refreshments will be served, and attendees will be entered in a prize drawing.
+
+For U-M faculty interested in joining MI ...</p>
+            <a href="http://events.umich.edu/event/115759" class="card-link">Event Link</a>
+        </div>
+    </div>
+    
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">University of Michigan Retirees Association presents Adventures in Bee Keeping - Bee Keeping Basics: Patty Bebee, MS, RN & Steve Beebe BSN, RN and Amy La Fleur, MS & Beau LaFleur, AD - All Beekeepers</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Jan 11 13:00 - 13:45. Lecture / Discussion. Off Campus Location</h6>
+            <p class="card-text">Bees play a very important role in our environment.  This panel will provide an overview of getting started as a hobbyist beekeeper.  They will describe the "how-tos" of bee keeping and the different components of setting up and keeping hives.  You will learn about equipment, clothing, costs, time and how to avoid getting stung.  The panel will also discuss the life of a bee colony, the division of labor in a honeybee colony plus the enjoyment and challenges in the life of a beekeeper.</p>
+            <a href="http://events.umich.edu/event/115715" class="card-link">Event Link</a>
+        </div>
+    </div>
+    
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Biomedical Engineering Seminar Series: "Computational Scattered Light Imaging for Label-free Deep Living Systems," with Xi Chen, Ph.D.</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Jan 11 15:30 - 16:30. Workshop / Seminar. Electrical Engineering and Computer Science Building</h6>
+            <p class="card-text">Abstract:
+Imaging deep inside living organisms with cellular resolution remains challenging as recurrent scattering by submicron-scale heterogeneous structures degrades the image-bearing capability of light. In this talk, I will present my work on imaging through turbid tissues with improved resolution and sensitivity using interferometric techniques and computational algorithms. I will first discuss how quantitative phase imaging (QPI) improves contrast and sensitivity in three-dimensional cel ...</p>
+            <a href="http://events.umich.edu/event/116591" class="card-link">Event Link</a>
+        </div>
+    </div>
+    
+
+    <script>
+
+        /**
+         * Returns str with time since date
+         * @param {Date} date Date with which to calculate diff
+         * @returns {String} String with time since date
+         */
+        function timeSince(date) {
+            var seconds = Math.floor((new Date() - date) / 1000);
+
+            var interval = seconds / 31536000;
+
+            if (interval > 1) {
+                return Math.floor(interval) + " year(s)";
+            }
+            interval = seconds / 2592000;
+            if (interval > 1) {
+                return Math.floor(interval) + " month(s)";
+            }
+            interval = seconds / 86400;
+            if (interval > 1) {
+                return Math.floor(interval) + " day(s)";
+            }
+            interval = seconds / 3600;
+            if (interval > 1) {
+                return Math.floor(interval) + " hour(s)";
+            }
+            interval = seconds / 60;
+            if (interval > 1) {
+                return Math.floor(interval) + " minute(s)";
+            }
+            return Math.floor(seconds) + " second(s)";
+        }
+
+        // Fill in updated since info
+        let updated = 1704987739696.938;
+        document.getElementById("updated").innerHTML = timeSince(new Date(parseInt(updated))) + ' ago';
+    </script>
+
+</body>
+</html>
