@@ -16,7 +16,7 @@ jobs:
 
     - name: Install pip requirements # Install required python packages
       run: |
-        pip install -r update/requirements.txt
+        pip install -r requirements.txt
 
     - name: Run main
       run: |
@@ -27,7 +27,7 @@ jobs:
         git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
         git add .
-        git commit -a -m "Auto scrapping"
+        git commit -a -m "Weekly auto update"
         
     - name: Push changes
       uses: ad-m/github-push-action@master
