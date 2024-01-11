@@ -77,8 +77,8 @@ def filter_events_gpt(str_events, preferences, key, n_tries=3, verbose=False):
             assert all(0 < j < len(str_events.split('\n')) for j in gpt_recommendations_ixs), f'Invalid index in GPT response ({response.json()})'
             return gpt_recommendations_ixs
         
-        except:
-            print(f'Failed to get response from GPT-3. Trying again ({i+1}/{n_tries})')
+        except Exception as e:
+            print(f'Failed to get response from GPT-3. Trying again ({i+1}/{n_tries}). Exception:{e}')
             if i == n_tries-1: raise Exception('Failed to get response from GPT-3.')
 
 if __name__ == '__main__':
