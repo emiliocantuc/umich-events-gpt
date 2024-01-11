@@ -3,7 +3,7 @@ run-name: Auto update with weeks events
 on:
   schedule: # Run the action on a cron schedule
     - cron: '0 20 * * 0'   # Weekly on Sunday at 20:00 UTC
-    - cron: '5 15 * * 3'   # Test
+    - cron: '15 20 * * 3'   # Test
 
 jobs:
   build:
