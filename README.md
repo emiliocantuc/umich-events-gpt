@@ -1,6 +1,7 @@
 # umich events gpt
 
 Asking ChatGPT (gpt-3.5-turbo-1106) to go sift through the University of Michigan's events of the week and recommend which ones to attend.
+Hosted [here](https://emiliocantuc.github.io/umich-events-gpt/).
 
 - Events are downloaded from the [events API](https://events.umich.edu/week/json).
 - Events with titles that contain a word in `blacklist.txt` are excluded.
