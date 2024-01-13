@@ -1,4 +1,4 @@
-compute
+comput
 latin
 hack
 free

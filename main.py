@@ -113,7 +113,20 @@ if __name__ == '__main__':
         with open('prompt.txt','r') as f: preferences = f.read()
         filtered_events_by_gpt = filter_events_gpt(str_events, preferences, args.key, 3, args.verbose)
         print(filtered_events_by_gpt)
+
+    # Include events with keywords in notifylist.txt
+    keyword_events = {}
+    if os.path.exists('notifylist.txt'):
+        with open('notifylist.txt','r') as f:
+            notifylist = f.read().split('\n')
+            keyword_events = {k:[] for k in notifylist}
+            for event in filtered_events:
+                for keyword in notifylist:
+                    if keyword in event['combined_title'].lower() + event['description'].lower():
+                        keyword_events[keyword].append(event)
+                        break
+            print(f'Found {len(keyword_events)} events with keywords.')
     
     # Update HTML page
     recommended_events = [filtered_events[i] for i in filtered_events_by_gpt]
-    utils.update_page(recommended_events)
+    utils.update_page(recommended_events, keyword_events)

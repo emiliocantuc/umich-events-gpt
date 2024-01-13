@@ -29,12 +29,32 @@ def event_card_HTML(event_json):
     
     return html
 
-def update_page(events_json, template_file='template.html', output_file='index.html'):
+def highlight_keywords(event_json, keyword):
+    """Highlights keywords in the event description"""
+
+    for field in ['combined_title', 'description']:
+        for kw in [keyword, keyword.title()]:
+            event_json[field] = event_json[field].replace(kw, f'<b>{kw}</b>')
+    return event_json
+
+def update_page(gpt_events_json, keyword_events, template_file='template.html', output_file='index.html'):
     """Updates the page with the week's events"""
     
     with open(template_file, 'r') as f: template = f.read()
 
     with open(output_file, 'w') as f:
-        template = template.replace('{{gpt-events}}', '\n'.join([event_card_HTML(event_json) for event_json in events_json]))
+        template = template.replace('{{gpt-events}}', '\n'.join([event_card_HTML(event_json) for event_json in gpt_events_json]))
         template = template.replace('{{updated}}', str(time.time()*1000))
+
+        if keyword_events:
+            kw_txt = "<h1 style='text-align:center;'>Events with keywords</h1>"
+            for keyword, events in keyword_events.items():
+                if events: kw_txt += f"<h2 style='text-align:center;'>{keyword}</h2>"
+                for event_json in events:
+                    kw_txt += event_card_HTML(highlight_keywords(event_json, keyword))
+            template = template.replace('{{keyword-events}}', kw_txt)
+        
+        else:
+            template = template.replace('{{keyword-events}}', '')
+
         f.write(template)
