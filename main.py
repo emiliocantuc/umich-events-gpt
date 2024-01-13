@@ -52,7 +52,7 @@ def prompt_gpt(str_events, preferences, key):
         'messages': [
             {
                 'role': 'system',
-                'content': f'You are an assistant that will recommend events from my university to me based on my preferences. {preferences}. I will prompt you with an event description per line and you must respond with an "events" JSON formated array with the events which you think are the most relevant to me. Only include the line number of the event in the array. For example, if you think the first and third events are relevant, you should respond with [1, 3].',
+                'content': f'You are an assistant that will recommend events from my university to me based on my preferences. {preferences}. I will prompt you with an event description per line and you must respond with an "events" JSON formated array with the events which you think are the most relevant to me. Only include the line number of the event in the array. For example, if you think the first and third events are relevant, you should respond with [1, 3]. Please include several events and rank them.',
             },
             {
                 'role': 'user',
