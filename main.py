@@ -125,7 +125,7 @@ if __name__ == '__main__':
                     if keyword in event['combined_title'].lower() + event['description'].lower():
                         keyword_events[keyword].append(event)
                         break
-            print(f'Found {len(keyword_events)} events with keywords.')
+            print(f'Found {len(keyword_events.values())} events with keywords.')
     
     # Update HTML page
     recommended_events = [filtered_events[i] for i in filtered_events_by_gpt]
