@@ -20,7 +20,7 @@ jobs:
 
     - name: Run main
       run: |
-        python3 main.py -v 1 --key ${{ secrets.OPEN_AI_K }} --url '${{ secrets.EVENTS_URL }}'
+        python3 main.py -v 1 --key ${{ secrets.OPEN_AI_K }} --url '${{ secrets.EVENTS_URL }}' --ntfy_topic ${{ secrets.NTFY_TOPIC }} 
 
     - name: Commit files
       run: |

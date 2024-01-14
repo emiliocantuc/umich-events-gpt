@@ -87,6 +87,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--url', required=True, help='Umich events url to get events from in JSON format')
     parser.add_argument('--key', required=True, help='Open AI API key')
+    parser.add_argument('--ntfy_topic', default='', help='Topic to send push notifications to using ntfy.sh')
     parser.add_argument('-v', '--verbose', type=bool, default=1, help='Prints more information')
     args = parser.parse_args()
 
@@ -130,3 +131,13 @@ if __name__ == '__main__':
     # Update HTML page
     recommended_events = [filtered_events[i] for i in filtered_events_by_gpt]
     utils.update_page(recommended_events, keyword_events)
+
+    # Send push notification via ntfy.sh
+    if args.ntfy_topic:
+        requests.post(
+            "https://ntfy.sh/"+args.ntfy_topic,
+            data={
+                'title':'Weekly Event Recommendations',
+                'message':f'Are ready: https://emiliocantuc.github.io/umich-events-gpt/'
+            }
+        )
