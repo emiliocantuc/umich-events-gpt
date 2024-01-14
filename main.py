@@ -136,8 +136,9 @@ if __name__ == '__main__':
     if args.ntfy_topic:
         requests.post(
             "https://ntfy.sh/"+args.ntfy_topic,
-            data={
-                'title':'Weekly Event Recommendations',
-                'message':f'Are ready: https://emiliocantuc.github.io/umich-events-gpt/'
-            }
+            headers={
+                "Title": "Weekly Event Recommendations",
+                "Tags": "umich",
+            },
+            data='Are ready: https://emiliocantuc.github.io/umich-events-gpt/'
         )
