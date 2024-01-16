@@ -1,4 +1,5 @@
 comput
-latin
+machine learning
+latinx
 hack
-free
+free 
