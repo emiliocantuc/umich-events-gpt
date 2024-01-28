@@ -15,3 +15,8 @@ Hosted [here](https://emiliocantuc.github.io/umich-events-gpt/).
 4. Set your events.umich.edu API link as a repository secret with the name `EVENTS_URL`. Here you can filter the types of events you want to consider. I've chosen, for example, `https://events.umich.edu/week/json?filter=types:21,5,13,19,18,&v=2`. **Make sure it is the JSON endpoint**.
 
 You can optionally setup and receive push notifications via [ntfy.sh](https://ntfy.sh/).
+
+## TODOs
+- remove duplicate events during same week
+- HTML: list in sections (recreational, social, lecture, workshop) ?
+- better event str representation. 
