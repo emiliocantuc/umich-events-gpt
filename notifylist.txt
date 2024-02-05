@@ -2,4 +2,5 @@ comput
 machine learning
 latinx
 hack
-free 
+rmf
+algo
