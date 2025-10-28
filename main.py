@@ -140,5 +140,5 @@ if __name__ == '__main__':
                 "Title": "Weekly Event Recommendations",
                 "Tags": "umich",
             },
-            data='Are ready: https://emiliocantuc.github.io/umich-events-gpt/'
+            data='Are ready: https://ecntu.github.io/umich-events-gpt/'
         )
